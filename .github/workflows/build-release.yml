@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set version
-        run: echo "IMAGE_VERSION=$(date +"%y%m.%j")" >> $GITHUB_ENV
+        run: echo "IMAGE_VERSION=$(date +"%y%m.%j.%H%M")" >> $GITHUB_ENV
       - name: Show version number
         run: echo "Building release for version - $IMAGE_VERSION"
       
@@ -52,7 +52,7 @@ jobs:
     needs: docker
     steps:
       - name: Set version
-        run: echo "IMAGE_VERSION=$(date +"%y%m.%j")" >> $GITHUB_ENV
+        run: echo "IMAGE_VERSION=$(date +"%y%m.%j.%H%M")" >> $GITHUB_ENV
       
       - name: Check out code
         uses: actions/checkout@v3
@@ -85,7 +85,7 @@ jobs:
       FILE_PATH: alexa_shopping_list/config.yaml
     steps:
       - name: Set version
-        run: echo "IMAGE_VERSION=$(date +"%y%m.%j")" >> $GITHUB_ENV
+        run: echo "IMAGE_VERSION=$(date +"%y%m.%j.%H%M")" >> $GITHUB_ENV
 
       - name: Check out the external repository
         uses: actions/checkout@v3
