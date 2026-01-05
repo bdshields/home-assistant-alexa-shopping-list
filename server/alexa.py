@@ -80,7 +80,7 @@ class AlexaShoppingList:
     def _clear_driver(self):
         if hasattr(self, "driver"):
             self.save_session()
-            self.driver.close()
+            self.driver.quit()
 
 
     def _selenium_wait_element(self, element: tuple):
